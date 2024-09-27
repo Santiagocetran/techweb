@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cutting-Edge Technology Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Font Awesome for Icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="logo">
+            <a href="#hero">
+                <img src="images/logo2.png" alt="Company Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about-us">About</a></li>
+            <li><a href="#features">Solutions</a></li>
+            <li><a href="#carousel">Latest Innovations</a></li>
+            <li><a href="#parallax-showcase">Manifest</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Experience the Future Today</h1>
+            <p>Innovating Technology for a Better Tomorrow</p>
+            <a href="#about-us" class="cta-button">Discover More</a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>
+                    At DXC, we're more than just innovators - we're visionaries shaping the future of technology. Our passion lies in crafting cutting-edge solutions that seamlessly blend into your everyday life, enhancing efficiency and unlocking new possibilities. With a team of brilliant minds and a relentless drive for excellence, we're committed to pushing the boundaries of what's possible, transforming complex challenges into elegant, user-friendly experiences that empower individuals and businesses alike.
+                </p>
+            </div>
+            <div class="about-image">
+                <!-- Team Image -->
+                <img src="images/img2.png" alt="Our Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Our Cutting-Edge Solutions</h2>
+        <div class="features-container">
+            <!-- Feature Item 1: Artificial Intelligence -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="images/AI.jpg" alt="Artificial Intelligence">
+                </div>
+                <h3>Artificial Intelligence</h3>
+                <p>Advanced AI systems that learn and adapt.</p>
+            </div>
+            <!-- Feature Item 2: Robotics -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="images/robot.jpg" alt="Robotics">
+                </div>
+                <h3>Applied Robotics</h3>
+                <p>Innovative robotics for industry and home.</p>
+            </div>
+            <!-- Feature Item 3: Blockchain -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="images/blockchain.jpg" alt="Blockchain">
+                </div>
+                <h3>Blockchain</h3>
+                <p>Secure and transparent digital transactions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section id="carousel">
+
+        <video autoplay muted loop id="carousel-bg-video">
+            <source src="videos/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h2>Latest Innovations</h2>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Existing Carousel Slides -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/carousel1.png" alt="Innovation One Image" class="carousel-image">
+                    <h3>Innovation One</h3>
+                    <p>Revolutionizing the tech world.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/carousel/carousel2.jpeg" alt="Innovation One Image" class="carousel-image">
+                    <h3>Innovation Two</h3>
+                    <p>Leading the future of AI.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/carousel/carousel3.jpeg" alt="Innovation One Image" class="carousel-image">
+                    <h3>Innovation Three</h3>
+                    <p>Transforming connectivity.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/carousel/carousel4.jpeg" alt="Innovation One Image" class="carousel-image">
+                    <h3>Innovation Four</h3>
+                    <p>Pioneering smart devices.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/carousel/carousel5.jpeg" alt="Innovation One Image" class="carousel-image">
+                    <h3>Innovation Five</h3>
+                    <p>Next-gen wearable technology.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/carousel/carousel6.jpeg" alt="Innovation One Image" class="carousel-image">
+                    <h3>Innovation Six</h3>
+                    <p>Advanced automation systems.</p>
+                </div>
+            </div>
+            
+            <!-- Carousel Navigation -->
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Parallax Showcase -->
+    <section id="parallax-showcase">
+          <!-- Video Background -->
+        <video autoplay muted loop id="parallax-bg-video">
+            <source src="videos/background2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="parallax-content">
+            <h2>Integrating Technology Seamlessly into Your Life</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/DXC.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section id="call-to-action">
+        <h2>Ready to Embrace the Future?</h2>
+        <a href="#hero" class="cta-button">Get Started Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>TechFuture</h3>
+                <p>Driving innovation for a better tomorrow.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about-us">About</a></li>
+                    <li><a href="#features">Solutions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/DXCTechnology/?locale=es_LA"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/dxctechnology"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/dxctechnology"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Email Address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Cutting-Edge Tech Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

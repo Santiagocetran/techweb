@@ -1,0 +1,694 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #f2f2f2;
+    background-color: #1a1a1a;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically centers the logo and nav links */
+    padding: 10px 50px;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    transition: background 0.3s;
+    z-index: 1000;
+}
+
+#navbar.scrolled {
+    background-color: rgba(26, 26, 26, 0.7);
+}
+
+#navbar .logo img {
+    height: 50px; /* Adjust as needed */
+    width: auto;  /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent the image from exceeding its container */
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+
+#navbar .logo img:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+    transform: scale(1.05); /* Slightly enlarge the logo */
+}
+
+#navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navbar Link Hover */
+#navbar .nav-links li a {
+    color: #f2f2f2;
+    transition: color 0.3s, border-bottom 0.3s; /* Smooth color transition and border change */
+    position: relative; /* Ensure we can use pseudo-elements */
+}
+
+#navbar .nav-links li a:hover {
+    color: #0ff0fc;
+    transform: scale(1.1);
+}
+
+#navbar .menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+#navbar .menu-toggle i {
+    font-size: 24px;
+    color: #f2f2f2;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: url('images/img1.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Adjust the gradient overlay as needed */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), #161616);
+}
+
+.hero-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 1; /* Ensure content appears above the overlay */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #d4f0fc; /* Adjust if needed for readability */
+}
+
+.hero-content p {
+    font-size: 24px;
+    color: #89d6fb; /* Adjust if needed for readability */
+    margin: 20px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #02577a;
+    color: #89d6fb;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0ff0fc;
+    color: #1a1a1a;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f2f2f2;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, -10px);
+    }
+}
+
+#about-us {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    position: relative; /* Needed for overlay */
+    background: url('images/About.jpg') no-repeat center center/cover;
+}
+
+#about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.7); /* Overlay color */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative; /* Ensure it appears above the overlay */
+    z-index: 1;         /* Stacking order above the overlay */
+    color: #f2f2f2;     /* Text color for readability */
+}
+
+
+.about-text {
+    flex: 1;
+    animation: slideInLeft 1s forwards;
+}
+
+.about-text h2 {
+    color: #02a9f7;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #f2f2f2;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 1;
+    animation: slideInRight 1s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Adjust as needed */
+    border-radius: 10px; /* Optional: add rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional: add a shadow */
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Features Section */
+/* Solutions (Features) Section */
+#features {
+    padding: 100px 50px;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    background: url('images/cutting-edge.jpg') no-repeat center center/cover;
+    color: #f2f2f2;
+}
+
+#features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.7);
+    z-index: 1;
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+#features h2 {
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.feature-item {
+    background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.feature-item h3 {
+    color: #02a9f7;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.feature-item p {
+    color: #f2f2f2;
+    margin-top: 0;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #features {
+        padding: 50px 20px;
+    }
+
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 30px;
+    }
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #02577a;
+    flex-shrink: 0; /* Prevents the icon from shrinking */
+}
+
+.feature-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.feature-item h3 {
+    color: #02a9f7;
+    margin-top: 0;         /* Remove top margin */
+    margin-bottom: 10px;   /* Consistent bottom margin */
+}
+
+.feature-item p {
+    color: #f2f2f2;
+    margin-top: 0;         /* Remove top margin */
+    margin-bottom: 20px;   /* Consistent bottom margin */
+    flex-grow: 1;          /* Allows the paragraph to fill available space */
+}
+
+.feature-icon:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+
+/* Carousel Section */
+#carousel {
+    height: 100vh;
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#carousel-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video covers the entire carousel section */
+    z-index: -1; /* Places the video behind the content */
+    opacity: 0.5; /* Adjust the opacity to make the content more readable */
+    pointer-events: none; /* Prevent the video from interfering with interactions */
+}
+
+#carousel h2 {
+    margin-bottom: 50px;
+}
+
+.carousel-container {
+    overflow: hidden; /* Prevents extra slides from showing */
+    position: relative;
+    width: 100%; /* Ensures the container takes up the full width */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 300px;
+    margin: 0 15px;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures the image fits within the container */
+    margin-bottom: 20px;
+    border-radius: 15px; /* Rounds the corners, adjust the value as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for a more polished look */
+}
+
+.carousel-slide h3 {
+    color: #0ff0fc;
+    margin-bottom: 10px;
+}
+
+.carousel-slide p {
+    color: #f2f2f2;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(26, 26, 26, 0.7);
+    border: none;
+    padding: 10px;
+    color: #f2f2f2;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: rgba(26, 26, 26, 1);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Parallax Showcase */
+#parallax-showcase {
+    padding: 100px 50px;  /* Add padding to create space */
+    text-align: center;   /* Ensure the text is centered */
+    background: url('images/parallax-placeholder.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Ensures the content stacks properly */
+}
+
+/* Video Background for Parallax Section */
+#parallax-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+    z-index: -1; /* Places the video behind the content */
+    opacity: 0.5; /* Optional: Adjust the opacity for better readability */
+    pointer-events: none; /* Prevents interaction with the video */
+}
+
+#parallax-showcase h2 {
+    margin-bottom: 50px;  /* Add some space below the text */
+    font-size: 36px;
+    color: #f2f2f2;
+}
+
+#parallax-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.7);
+}
+
+.parallax-content {
+    position: relative;
+    text-align: center;
+}
+
+.parallax-content h2 {
+    color: #5e00c8;
+    font-size: 36px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 50px;
+    background-color: #1a1a1a; */
+}
+
+.video-container video {
+    max-width: 700px;  /* Set a maximum width to control the size */
+    width: 100%;       /* Make it responsive */
+    height: auto;      /* Keep the aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;    /* Center the video */
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+#testimonials h2 {
+    margin-bottom: 50px;
+    color: #0ff0fc;
+}
+
+.testimonial-slider {
+    position: relative;
+}
+
+.testimonial-slide {
+    display: none;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+.testimonial-slide p {
+    font-style: italic;
+    color: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+.testimonial-slide h3 {
+    color: #ff007c;
+}
+
+.testimonial-slide span {
+    color: #f2f2f2;
+}
+
+/* Call-to-Action Section */
+#call-to-action {
+    padding: 100px 50px;
+    background: linear-gradient(90deg, #5e00c8, #0ff0fc);
+    text-align: center;
+}
+
+#call-to-action h2 {
+    margin-bottom: 30px;
+    color: #f2f2f2;
+}
+
+#call-to-action .cta-button {
+    background-color: #02577a;
+    color:  #89d6fb;
+}
+
+#call-to-action .cta-button:hover {
+    background-color: #0ff0fc;
+    color: #1a1a1a;
+}
+
+/* Footer */
+footer {
+    background-color: #141414;
+    padding: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    color: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+.footer-column p, .footer-column ul, .footer-column form {
+    color: #f2f2f2;
+}
+
+.footer-column ul li a {
+    color: #f2f2f2;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #0ff0fc;
+}
+
+.social-icons a {
+    color: #f2f2f2;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0ff0fc;
+}
+
+.footer-column form input {
+    padding: 10px;
+    width: calc(100% - 110px);
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-column form button {
+    padding: 10px;
+    width: 80px;
+    background-color: #02577a;
+    border: none;
+    color: #f2f2f2;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.footer-column form button:hover {
+    background-color: #0ff0fc;
+    color: #1a1a1a;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #f2f2f2;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-container, .features-container, .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item, .testimonial-slide {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #navbar .nav-links {
+        display: none;
+    }
+
+    #navbar .menu-toggle {
+        display: block;
+    }
+
+    #navbar.active .nav-links {
+        display: flex;
+        flex-direction: column;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+    }
+
+    #navbar.active .nav-links li {
+        margin-bottom: 20px;
+    }
+
+    .carousel-slide {
+        min-width: 80%;
+    }
+}
